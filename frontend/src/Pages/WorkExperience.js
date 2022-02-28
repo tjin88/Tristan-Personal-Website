@@ -32,15 +32,17 @@ function WorkExperience() {
         <section className="body">
             <section className="part">
                 <p className="text">Software Developer Intern - Tauria, March 2021 - Aug 2021</p>
-                <img className = "workImage right" src = {Tauria} alt = "Western logo"/>
+                <img className = "workImage rightWork" src = {Tauria} alt = "Western logo"/>
             </section>
             <section className="part">
                 <img className = "workImage" src = {PHRC} alt = "Cobourg logo"/>
-                <p className="text right">Tennis Coach - Self-Employed & Local tennis club, June 2017 - Aug 2021</p>
+                <p className="text rightWork">Tennis Coach - Self-Employed & Local tennis club, June 2017 - Aug 2021</p>
             </section>
             <section className="part">
                 <p className="text">Customer Service Representative - Pharmacy 101, Sept 2013 - Sept 2021</p>
-                <img className = "workImage right" src = {RX101} alt = "LA Marathon logo"/>
+                <div className = "pharmacy101Background rightWork">
+                  <img className = "pharmacy101" src = {RX101} alt = "LA Marathon logo"/>
+                </div>
             </section>
         </section>
       </div>

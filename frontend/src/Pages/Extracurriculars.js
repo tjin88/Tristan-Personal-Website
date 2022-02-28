@@ -33,19 +33,19 @@ function Extracurriculars() {
         <section className="body">
             <section className="part">
                 <p className="text">Political Advocacy Director - Engineers Without Borders, April 2021 - Present</p>
-                <img className = "image right" src = {EWB_Logo} alt = "Western logo"/>
+                <img className = "image rightEC" src = {EWB_Logo} alt = "Western logo"/>
             </section>
             <section className="part">
                 <img className = "image" src = {GDSC_Western} alt = "Cobourg logo"/>
-                <p className="text right">Educationals Director - Google Developer Student Club, September 2021 - Present</p>
+                <p className="text rightEC">Educationals Director - Google Developer Student Club, September 2021 - Present</p>
             </section>
             <section className="part">
                 <p className="text">Analyst - Mustang Capital, September 2021 - Present</p>
-                <img className = "image right" src = {MCap_Logo} alt = "LA Marathon logo"/>
+                <img className = "image rightEC" src = {MCap_Logo} alt = "LA Marathon logo"/>
             </section>
             <section className="part">
                 <img className = "image" src = {WECCA_Logo} alt = "Cobourg logo"/>
-                <p className="text right">Member - Western Engineering Concrete Canoe Association, September 2020 - Present</p>
+                <p className="text rightEC">Member - Western Engineering Concrete Canoe Association, September 2020 - Present</p>
             </section>
         </section>
       </div>

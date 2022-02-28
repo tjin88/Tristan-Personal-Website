@@ -48,6 +48,16 @@ function Projects() {
                     Created functionality for user to click images or videos to open the HD version of the media in a separate page
                 </p>
             </section>
+            <section>
+                <a href="https://friendship-webapp.web.app/" target="-blank">
+                    <h2 className = "projectName">
+                        Friendship WebApp
+                    </h2>
+                </a>
+                <p>
+                    INSERT TEXT HERE!!!
+                </p>
+            </section>
         </section>
       </div>
     </div>

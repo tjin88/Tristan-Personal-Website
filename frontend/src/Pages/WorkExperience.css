@@ -49,13 +49,29 @@
     width: 18vw;
   }
 
+  .pharmacy101Background {
+    background-color: darkblue;
+    width: 18vw;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .pharmacy101 {
+    height: auto;
+    width: 17.5vw;
+  }
+
   /* LOOK INTO Row Column REACT */
-  .right {
+  .rightWork {
     /* margin: 0 0 0 30px; */
     /* float: right; */
-    margin-right: 10%;
-
+    margin-left: 20%;
+    text-align: right;
+    /* right: 0%; */
   }
+
+
+
   
   .menu {
     background-color: transparent;

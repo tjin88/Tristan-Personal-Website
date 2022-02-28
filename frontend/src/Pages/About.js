@@ -31,7 +31,7 @@ function About() {
         </h2>
         <section className="body">
             <section className="part">
-                <p className="text">My name is Tristan. I'm an engineering student at Western University, hoping to specialize in software engineering.</p>
+                <p className="text">My name is Tristan. I'm an engineering student at Western University specializing in software engineering.</p>
                 <img className = "image" src = {Western} alt = "Western logo"/>
             </section>
             <section className="part">
