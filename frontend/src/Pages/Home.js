@@ -4,39 +4,66 @@ import Moon from '../Assets/Moon.png';
 import ManColour from '../Assets/ManColour.png';
 import Sun from '../Assets/Sun.png';
 import ManBlackWhite from '../Assets/ManBlackWhite.png';
+import { SidebarData } from '../Components/SidebarData';
+import Footer from '../Components/Footer';
 
 function Home() {
   //if colour mode on, this is true. If black/white version, set this to false
   // const [colour, setColour] = useState("colour");   //either "colour" or "blackWhite"
   const [colour, setColour] = useState(true);
+  const [sidebar, showSidebar] = useState(false);
 
   return (
-    <div className={`Home ${colour ? "colour" : "blackWhite"}`}>
-    {/* <div className={`Home ${colour}`}> */}
-      <div className = "background">
-        {/* **Still need to make this button invisible**  */}
-        <button className = "button" onClick={() => setColour(!colour)}>
-          <img className = "sunMoon" src = {colour ? Moon : Sun} alt = "Moon"/>
-        </button>
-
-        {/* <button className="menu" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu">
-          <svg width="100" height="100" viewBox="0 0 100 100">
-            <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
-            <path class="line line2" d="M 20,50 H 80" />
-            <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
-          </svg>
-        </button> */}
-
-        <div class="nav-icon">
-          <div></div>
+    <>
+      <div className={`Home ${colour ? "colourBackground fadeIn2" : "blackWhiteBackground fadeIn"}`} id = "Home">
+        <img className = {`sunMoonHome ${colour ? "" : "invertColour"}`} src = {colour ? Moon : Sun} alt = "Moon" onClick={() => setColour(!colour)}/>
+        <div className={`${sidebar ? "sidebar active" : "sidebar"} ${colour ? "colourSidebar" : "blackWhiteSidebar"}`}>
+          {/* <div className={`nav-icon ${colour ? "" : "invertColour"} ${sidebar ? "active" : ""}`} onClick={() => showSidebar(!sidebar)}>
+              <div></div>
+          </div> */}
+          <ul className="sidebarList">
+            {SidebarData.map((item, index) => {
+              return (
+                <li key={index} className={`${item.className} ${colour ? "" : "invertColour"}`}>
+                  <a href={item.path} onClick={() => showSidebar(!sidebar)}>
+                    {/* ICON WOULD GO HERE */}
+                    <span>{item.title}</span>
+                  </a>
+                </li>
+              )
+            })}
+          </ul>
         </div>
-
+        <div className={`nav-icon ${colour ? "" : "invertColour"} ${sidebar ? "active" : ""}`} onClick={() => showSidebar(!sidebar)}>
+            <div></div>
+        </div>
         <div className = "intro">
-          <img className = "boyImage" src = {colour ? ManColour : ManBlackWhite} alt = ""/>
-          <h1 className = "name">Hi! I'm Tristan Jin</h1>
+          <img className = {`boyImage ${colour ? "" : "invertColour"}`} src = {colour ? ManColour : ManBlackWhite} alt = ""/>
+          <h1 className = {`name ${colour ? "blackText" : "whiteText"}`}>Hi! I'm Tristan Jin</h1>
         </div>
       </div>
-    </div>
+
+
+      {/* <div className = {`sectionDivider ${colour ? "invertColour" : ""}`}></div> */}
+
+
+
+      <div className = {`aboutMe ${colour ? "colourBackground fadeIn2" : "blackWhiteBackground fadeIn"}`} id = "AboutMe">
+        <h1 className = "sectionTitle">ABOUT ME</h1>
+        <p className = {`text ${colour ? "blackText" : "whiteText"}`}> Based in the Cobourg, Ontario, I'm currently studying my third year of software engineering and business at <a className = "purpleLinks" href = "https://www.uwo.ca/" target="_blank" rel="noopener noreferrer">Western University</a>. 
+        As a software developer, I hope to deliver unique products to make individual lives easier. 
+        Currently, I'm seeking a Summer 2023 internship where I can continue to deliver this passion towards real-world experiences.</p>
+        <p className = {`text ${colour ? "blackText" : "whiteText"}`}> Feel free to take a look at my <a className = "purpleLinks" href="https://drive.google.com/file/d/1-6RqiUdoRNrCX9ZTSrHwicZ3mqupoOd-/view?usp=sharing" target="_blank" rel="noopener noreferrer">resume</a> or check out below some of the technologies I've worked with!</p>
+      </div>
+
+      <div className = {`workExperience ${colour ? "colourBackground fadeIn2" : "blackWhiteBackground fadeIn"}`} id = "WorkExperience">
+        <h1 className = "sectionTitle">Work Experience</h1>
+        <p className = {`text ${colour ? "blackText" : "whiteText"}`}>hello</p> 
+      </div>
+
+
+      <Footer/>
+    </>
   );
 }
 

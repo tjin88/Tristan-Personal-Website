@@ -1,34 +1,50 @@
-.Home {
+  .Home {
+    z-index: 0;
     height: 100vh;
     width: 100vw;
   }
   
-  .colour {
-    background: linear-gradient(180deg, #E9A9E7 29.92%, #FBC8D4 68.05%, #F7E8D2 100%);
+  .colourBackground {
+    /* background: linear-gradient(180deg, #E9A9E7 29.92%, #FBC8D4 68.05%, #F7E8D2 100%); */
+    background-color: #FAF8EE;
+    animation: fadeColourBackground 1s;
+    animation-fill-mode: forwards;
   }
 
-  .blackWhite {
-    background: linear-gradient(180deg, #878787 1.07%, #B8B8B8 21.16%, #D4D4D4 44.87%, #DDDDDD 58.78%, #FFFFFF 100%);
+  .blackWhiteBackground {
+    /* background: linear-gradient(180deg, #878787 1.07%, #B8B8B8 21.16%, #D4D4D4 44.87%, #DDDDDD 58.78%, #FFFFFF 100%); */
+    background-color: #2B2C2E;
+    animation: fadeBlackWhiteBackground 1s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes fadeBlackWhiteBackground {
+    from { background-color: #FAF8EE; }
+    to { background-color: #2B2C2E; }
   }
 
-  .button {
-    /* visibility: hidden; */
-    width: 0px;
-    height: 0px;
+  @keyframes fadeColourBackground{
+    from { background-color: #2B2C2E; }
+    to { background-color: #FAF8EE; }
   }
 
-  .sunMoon {
-    position: absolute;
-    right: 2%;
-    top: 3%;
-    width: auto;
-    height: 8%;  }
+  .sunMoonHome {
+    position: fixed;
+    z-index: 1000;
+    right: 1%;
+    /* float: right; */
+    margin-top: 2%;
+    margin-right: 3%;
+    width: 50px;
+    height: 50px;
+  }
   
   .intro {
     position: absolute;
     left: 50%;
     top: 40%;
     display: flex;
+    align-items: center; 
+    justify-content: center;
   }
   
   .boyImage {
@@ -38,59 +54,113 @@
   
   .name {
     margin: 0 0 0 10px;
-    font-size: 3rem;
+    font-size: 4vw;
     font-weight: normal;
+    vertical-align: middle;
   }
+
+  .blackText {
+    color: black;
+  }
+
+  .whiteText {
+    color: white;
+  }
+
+  .invertColour {
+    filter: invert(1);
+  }
+
+  /* .fadeInBlackWhite {
+    animation: fadeInBlackWhite 1s;
+  }
+  .fadeInColour {
+    animation: fadeInColour 1s;
+  }
+
+  @keyframes fadeInBlackWhite {
+    0% { opacity: 0.1; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes fadeInColour {
+    0% { opacity: 0.4; }
+    100% { opacity: 1; }
+  } */
   
-  .menu {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    padding: 0;
-    top: 0%;
-    left: 1%;
-    position: absolute;
+  .sidebar {
+    position: fixed;
+    display: inline-block;
+    height: 100vh;
+    width: 20vw;
+    padding-left: 2em;
+    padding-top: 5em;
+    left: -100%;
+    transition: 850ms;
   }
-  .line {
-    fill: none;
-    stroke: black;
-    stroke-width: 6;
-    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .sidebar.active {
+    left: 0%;
+    transition: 850ms;
   }
-  .line1 {
-    stroke-dasharray: 60 207;
-    stroke-width: 6;
+
+  .colourSidebar {
+    background-color: #E1C699;
+    animation: fadeColourSidebar 1s;
+    animation-fill-mode: forwards;
   }
-  .line2 {
-    stroke-dasharray: 60 60;
-    stroke-width: 6;
+
+  .blackWhiteSidebar {
+    background-color: black;
+    animation: fadeBlackWhiteSidebar 1s;
+    animation-fill-mode: forwards;
   }
-  .line3 {
-    stroke-dasharray: 60 207;
-    stroke-width: 6;
+
+  @keyframes fadeBlackWhiteSidebar {
+    from { background-color: #E1C699; }
+    to { background-color: black; }
   }
-  .opened .line1 {
-    stroke-dasharray: 90 207;
-    stroke-dashoffset: -134;
-    stroke-width: 6;
+
+  @keyframes fadeColourSidebar {
+    from { background-color: black; }
+    to { background-color: #E1C699; }
   }
-  .opened .line2 {
-    stroke-dasharray: 1 60;
-    stroke-dashoffset: -30;
-    stroke-width: 6;
+
+  .sidebarList {
+    padding: 0%;
+    z-index: 1000;
   }
-  .opened .line3 {
-    stroke-dasharray: 90 207;
-    stroke-dashoffset: -134;
-    stroke-width: 6;
+
+  .sidebarTitle {
+    list-style: none;
+    text-decoration: none;
+    margin-bottom: 20px;
+  }
+
+  .sidebarTitle a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5vw;
   }
 
   .nav-icon {
-    margin: 1em;
+    position: fixed;
+    margin: 2em;
     width: 40px;
+    z-index: 1000;
   }
+
+  .nav-icon.active:before {
+    transform: translateY(12px) rotate(135deg);
+  }
+  
+  .nav-icon.active:after {
+    transform: translateY(-12px) rotate(-135deg);
+  }
+
+  .nav-icon.active div {
+    transform: scale(0);
+  } 
   
   .nav-icon:after, 
   .nav-icon:before, 
@@ -101,17 +171,83 @@
     display: block;
     height: 5px;
     margin: 7px 0;
-    transition: all .2s ease-in-out;
+    transition: all .5s ease-in-out;
   }
 
-  .nav-icon:hover:before {
-    transform: translateY(12px) rotate(135deg);
+  .aboutMe {
+    /* height: 100vh; */
+    width: 100vw;
+    padding-bottom: 100px;
   }
-  
-  .nav-icon:hover:after {
-    transform: translateY(-12px) rotate(-135deg);
+
+  .sectionDivider {
+    z-index: -1;
+    width: 100vw;
+    height: 20px;
+    background-color: white;
   }
+
+  .sectionTitle {
+    margin: 0%;
+    text-align: center;
+    font-size: 3rem;
+    color: #c891f1;
+  }
+
+  @media screen and (max-width: 800px) {
+    .text {
+      margin: 20px 0px 0px 0px;
+      text-align: center;
+      padding-left: 5%;
+      padding-right: 3%;
+      font-size: 23px;
+      font-family: 'mustica';
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    .text {
+      margin: 20px 0px 0px 0px;
+      text-align: center;
+      padding-left: 15%;
+      padding-right: 15%;
+      font-size: 23px;
+      font-family: 'mustica';
+    }
+  }
+
+  /* .text {
+    margin: 20px 0px 0px 0px;
+    text-align: center;
+    padding-left: 20%;
+    padding-right: 20%;
+    font-size: 23px;
+    font-family: 'mustica';
+  } */
+
+  a {
+    text-decoration: none;
+  }
+  /* a:link, a:visited {
+      color: #c891f1;
+  } */
+  a:hover {
+    /* color: #966Fd6; */
+    color: #9300ff;
+  }
+
+  .purpleLinks {
+    color: #c891f1;
+  }
+
+  @font-face { font-family: minomu; 
+    src: url('../Assets/minomu-font/MinomuLight-L3xgn.otf'); 
+  } 
+  @font-face { font-family: mustica; 
+    src: url('../Assets/mustica-pro-by-alifinart-studio-font/MusticaproSemibold-2OG5o.otf'); 
+  } 
   
-  .nav-icon:hover div {
-    transform: scale(0);
+  .workExperience {
+    width: 100vw;
+    padding-bottom: 100px;
   }
