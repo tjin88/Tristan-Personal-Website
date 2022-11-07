@@ -1,18 +1,9 @@
-.Extracurriculars {
+/* .Extracurriculars {
     height: 100vh;
     width: 100vw;
   }
-  
-  /* .colour {
-    background: linear-gradient(180deg, #E9A9E7 29.92%, #FBC8D4 68.05%, #F7E8D2 100%);
-  }
-
-  .blackWhite {
-    background: linear-gradient(180deg, #878787 1.07%, #B8B8B8 21.16%, #D4D4D4 44.87%, #DDDDDD 58.78%, #FFFFFF 100%);
-  } */
 
   .button {
-    /* visibility: hidden; */
     width: 0px;
     height: 0px;
   }
@@ -50,8 +41,6 @@
   }
   
   .rightEC {
-    /* margin: 0 0 0 30px; */
-    /* float: right; */
     margin-left: 50%;
     text-align: right;
   }
@@ -100,4 +89,4 @@
     stroke-dasharray: 90 207;
     stroke-dashoffset: -134;
     stroke-width: 6;
-  }
+  } */

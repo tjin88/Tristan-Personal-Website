@@ -1,7 +1,7 @@
   .Home {
-    z-index: 0;
+    /* z-index: 0; */
     height: 100vh;
-    width: 100vw;
+    width: 100%;
   }
   
   .colourBackground {
@@ -36,15 +36,25 @@
     margin-right: 3%;
     width: 50px;
     height: 50px;
+    top: 0%;
+    right: 0%;
   }
   
   .intro {
     position: absolute;
     left: 50%;
     top: 40%;
+  }
+
+  .introText {
     display: flex;
     align-items: center; 
     justify-content: center;
+  }
+
+  .contactMeIntro {
+    /* right: 0%; */
+    text-align:end;
   }
   
   .boyImage {
@@ -89,18 +99,23 @@
   } */
   
   .sidebar {
+    /* z-index: 1; */
     position: fixed;
-    display: inline-block;
-    height: 100vh;
-    width: 20vw;
-    padding-left: 2em;
+    /* display: inline-block; */
+    top: 0;
+    left: 0;
+    height: 100%;
+    /* width: 20vw; */
+    width: 0px;
     padding-top: 5em;
-    left: -100%;
+    /* left: -100%; */
     transition: 850ms;
   }
 
   .sidebar.active {
-    left: 0%;
+    /* left: 0%; */
+    width: 20vw;
+    padding-left: 2em;
     transition: 850ms;
   }
 
@@ -128,7 +143,14 @@
 
   .sidebarList {
     padding: 0%;
-    z-index: 1000;
+    /* z-index: 1000; */
+    opacity: 0;
+    transition: 1000ms;
+  }
+
+  .sidebarList.active {
+    opacity: 1;
+    transition: 1000ms;
   }
 
   .sidebarTitle {
@@ -176,13 +198,21 @@
 
   .aboutMe {
     /* height: 100vh; */
-    width: 100vw;
+    width: 100%;
     padding-bottom: 100px;
+    transition: 850ms;
+  }
+
+  .aboutMe.active {
+    /* right: 0%; */
+    width: 80vw;
+    padding-left: 20vw;
+    transition: 850ms;
   }
 
   .sectionDivider {
     z-index: -1;
-    width: 100vw;
+    /* width: 100vw; */
     height: 20px;
     background-color: white;
   }
@@ -194,18 +224,51 @@
     color: #c891f1;
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 900px) {
     .text {
       margin: 20px 0px 0px 0px;
       text-align: center;
-      padding-left: 5%;
-      padding-right: 3%;
-      font-size: 23px;
+      padding-left: 15%;
+      padding-right: 15%;
+      font-size: 15px;
       font-family: 'mustica';
+    }
+
+    .workText {
+      font-size: 15px;
+      font-family: 'mustica';
+    }
+
+    .part {
+      width: 100vw;
+      display: flex;
+      padding-left: 15%;
+      padding-right: 15%;
+    }
+
+    .rightWork {
+      /* margin-left: 20%; */
+      text-align: right; 
+      float: right;
+      padding-right: 15vw;
+      margin: 20px 0px;
+      -ms-transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+  
+    .leftWork {
+      text-align: left;
+      float: left;
+      padding-left: 15vw;
+      margin: 20px 0px;
+      -ms-transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
     }
   }
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 900px) {
     .text {
       margin: 20px 0px 0px 0px;
       text-align: center;
@@ -213,6 +276,39 @@
       padding-right: 15%;
       font-size: 23px;
       font-family: 'mustica';
+    }
+
+    .workText {
+      font-size: 23px;
+      font-family: 'mustica';
+    }
+    
+    .part {
+      width: 100vw;
+      display: flex;
+      padding-left: 15%;
+      padding-right: 15%;
+    }
+
+    .rightWork {
+      /* margin-left: 20%; */
+      text-align: right; 
+      float: right;
+      padding-right: 15vw;
+      margin: 20px 0px;
+      -ms-transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+  
+    .leftWork {
+      text-align: left;
+      float: left;
+      padding-left: 15vw;
+      margin: 20px 0px;
+      -ms-transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
     }
   }
 
@@ -234,11 +330,34 @@
   a:hover {
     /* color: #966Fd6; */
     color: #9300ff;
+    font-weight: bold;
   }
 
   .purpleLinks {
     color: #c891f1;
   }
+
+  .purpleLinks:hover {
+    color: #9300ff;
+  }
+
+  /* .purpleLinks:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #9300ff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .purpleLinks:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  } */
 
   @font-face { font-family: minomu; 
     src: url('../Assets/minomu-font/MinomuLight-L3xgn.otf'); 
@@ -246,8 +365,92 @@
   @font-face { font-family: mustica; 
     src: url('../Assets/mustica-pro-by-alifinart-studio-font/MusticaproSemibold-2OG5o.otf'); 
   } 
-  
+
   .workExperience {
-    width: 100vw;
+    /* height: 100vh; */
+    width: 100%;
     padding-bottom: 100px;
+    transition: 850ms;
+  }
+
+  .workExperience.active {
+    /* right: 0%; */
+    width: 80vw;
+    padding-left: 20vw;
+    transition: 850ms;
+  }
+
+  .interests {
+    /* height: 100vh; */
+    width: 100%;
+    padding-bottom: 100px;
+    transition: 850ms;
+  }
+
+  .interests.active {
+    /* right: 0%; */
+    width: 80vw;
+    padding-left: 20vw;
+    transition: 850ms;
+  }
+
+  .contact {
+    /* height: 100vh; */
+    width: 100%;
+    padding-bottom: 100px;
+    transition: 850ms;
+    text-align: center;
+  }
+
+  .contact.active {
+    /* right: 0%; */
+    width: 80vw;
+    padding-left: 20vw;
+    transition: 850ms;
+  }
+
+  .contactLogo {
+    width: 50px;
+    height: 50px;
+    /* margin: 20px 0px; */
+  }
+
+  .contactLogo.middle {
+    margin: 20px 20px;
+  }
+
+  .contactLogo.outerLeft {
+    margin: 20px 20px 20px 0px;
+  }
+
+  .contactLogo.outerRight {
+    margin: 20px 0px 20px 20px;
+  }
+
+  .introLogo {
+    width: 30px;
+    height: 30px;
+    /* margin: 20px 0px; */
+  }
+
+  .introLogo.middle {
+    margin: 10px 10px;
+  }
+
+  .introLogo.outerLeft {
+    margin: 10px 10px 10px 0px;
+  }
+
+  .introLogo.outerRight {
+    margin: 10px 0px 10px 10px;
+  }
+
+  .qualcommLogo {
+    height: auto;
+    width: 18vw;
+  }
+
+  .tauriaLogo {
+    height: auto;
+    width: 7vw;
   }

@@ -32,7 +32,7 @@ function WorkExperience() {
         <section className="body">
             <section className="part">
                 <p className="text">Software Developer Intern - Tauria, March 2021 - Aug 2021</p>
-                <img className = "workImage rightWork" src = {Tauria} alt = "Western logo"/>
+                <img className = "workImage rightWork" src = {Tauria} alt = "Tauria logo"/>
             </section>
             <section className="part">
                 <img className = "workImage" src = {PHRC} alt = "Cobourg logo"/>
