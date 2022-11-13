@@ -6,7 +6,7 @@ import Sun from '../Assets/Sun.png';
 import ManBlackWhite from '../Assets/ManBlackWhite.png';
 import { SidebarData } from '../Components/SidebarData';
 import Footer from '../Components/Footer';
-import Instagram from '../Assets/Instagram.png'
+import Resume from '../Assets/Resume.png'
 import Github from '../Assets/Github.png'
 import Linkedin from '../Assets/LinkedIn.png'
 import Email from '../Assets/Email.png'
@@ -40,8 +40,8 @@ function Home() {
             <a className = "logoLinks" href="mailto:tjin368@gmail.com" target="_blank" rel="noopener noreferrer">
               <img className = {`introLogo middle ${colour ? "" : "invertColour"}`} src = {Email} alt = "Email Logo"/>
             </a>
-            <a className = "logoLinks" href="https://linkedin.ca/in/tristan-jin" target="_blank" rel="noopener noreferrer">
-              <img className = {`introLogo outerRight ${colour ? "" : "invertColour"}`} src = {Instagram} alt = "Instagram Logo"/>
+            <a className = "logoLinks" href="https://drive.google.com/file/d/1-6RqiUdoRNrCX9ZTSrHwicZ3mqupoOd-/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <img className = {`introLogo outerRight ${colour ? "" : "invertColour"}`} src = {Resume} alt = "Resume Logo"/>
             </a>
           </div>
         </div>
@@ -108,8 +108,8 @@ function Home() {
         <a className = "logoLinks" href="mailto:tjin368@gmail.com" target="_blank" rel="noopener noreferrer">
           <img className = {`contactLogo middle ${colour ? "" : "invertColour"}`} src = {Email} alt = "Email Logo"/>
         </a>
-        <a className = "logoLinks" href="https://linkedin.ca/in/tristan-jin" target="_blank" rel="noopener noreferrer">
-          <img className = {`contactLogo outerRight ${colour ? "" : "invertColour"}`} src = {Instagram} alt = "Instagram Logo"/>
+        <a className = "logoLinks" href="https://drive.google.com/file/d/1-6RqiUdoRNrCX9ZTSrHwicZ3mqupoOd-/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <img className = {`contactLogo outerRight ${colour ? "" : "invertColour"}`} src = {Resume} alt = "Resume Logo"/>
         </a>
       </div>
 
