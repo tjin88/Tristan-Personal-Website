@@ -10,7 +10,9 @@ import Resume from '../Assets/Resume.png'
 import Github from '../Assets/Github.png'
 import Linkedin from '../Assets/LinkedIn.png'
 import Email from '../Assets/Email.png'
-import Tauria from '../Assets/Tauria_Logo.png';
+// import Tauria from '../Assets/Tauria_Logo.png';
+import TauriaDark from '../Assets/Tauria_Logo_Dark.svg';
+import TauriaWhite from '../Assets/Tauria_Logo_White.svg';
 import Qualcomm from '../Assets/Qualcomm_Logo.svg';
 
 function Home() {
@@ -65,29 +67,24 @@ function Home() {
           </ul>
         </div>
 
-
-      {/* <div className = {`sectionDivider ${colour ? "invertColour" : ""}`}></div> */}
-
-
-
       <div className = {`aboutMe ${colour ? "colourBackground fadeIn2" : "blackWhiteBackground fadeIn"} ${sidebar ? "active" : ""}`} id = "AboutMe">
         <h1 className = "sectionTitle">ABOUT ME</h1>
-        <p className = {`text ${colour ? "blackText" : "whiteText"}`}> Based in the Cobourg, Ontario, I'm currently studying my third year of software engineering and business at <a className = "purpleLinks" href = "https://www.uwo.ca/" target="_blank" rel="noopener noreferrer">Western University</a>. 
+        <p className = {`text ${colour ? "blackText" : "whiteText"}`}> Based in Cobourg, Ontario, I'm currently studying my third year of software engineering and business at <a className = "purpleLinks" href = "https://www.uwo.ca/" target="_blank" rel="noopener noreferrer">Western University</a>. 
         As a software developer, I hope to deliver unique products to make individual lives easier. 
         Currently, I'm seeking a Summer 2023 internship where I can continue to deliver this passion towards real-world experiences.</p>
-        <p className = {`text ${colour ? "blackText" : "whiteText"}`}> Feel free to take a look at my <a className = "purpleLinks" href="https://drive.google.com/file/d/1-6RqiUdoRNrCX9ZTSrHwicZ3mqupoOd-/view?usp=sharing" target="_blank" rel="noopener noreferrer">resume</a> or check out below some of the technologies I've worked with!</p>
+        <p className = {`text ${colour ? "blackText" : "whiteText"}`}> Feel free to take a look at my <a className = "purpleLinks" href="https://drive.google.com/file/d/1-6RqiUdoRNrCX9ZTSrHwicZ3mqupoOd-/view?usp=sharing" target="_blank" rel="noopener noreferrer">resume</a>!</p>
       </div>
 
       <div className = {`workExperience ${colour ? "colourBackground fadeIn2" : "blackWhiteBackground fadeIn"} ${sidebar ? "active" : ""}`} id = "WorkExperience">
         <h1 className = "sectionTitle">Work Experience</h1>
-        <p className="workText leftWork">Qualcomm - Machine Learning Team</p>
+        <p className={`workText leftWork ${colour ? "blackText" : "whiteText"}`}>Qualcomm - Machine Learning Team</p>
         <img className = "qualcommLogo rightWork" src = {Qualcomm} alt = "Qualcomm logo"/>
         {/* <p className="workText leftWork">Some explaination</p> */}
-        <section className="part"></section>
-        <img className = "tauriaLogo leftWork" src = {Tauria} alt = "Tauria logo"/>
-        <p className="workText rightWork">Tauria - Frontend Development Team</p>
+        <div className="blackPart"></div>
+        <p className={`workText leftWork ${colour ? "blackText" : "whiteText"}`}>Tauria - Frontend Development Team</p>
+        <img className = {`${colour ? "tauriaLogoDark" : "tauriaLogoWhite"} rightWork`} src = {colour ? TauriaDark : TauriaWhite} alt = "Tauria logo"/>
         {/* <p className="workText rightWork">Some explaination</p> */}
-        <section className="part"></section>
+        <section className="clearPart"></section>
       </div>
 
       <div className = {`interests ${colour ? "colourBackground fadeIn2" : "blackWhiteBackground fadeIn"} ${sidebar ? "active" : ""}`} id = "Interests">
@@ -98,7 +95,6 @@ function Home() {
 
       <div className = {`contact ${colour ? "colourBackground fadeIn2" : "blackWhiteBackground fadeIn"} ${sidebar ? "active" : ""}`} id = "Contact">
         <h1 className = "sectionTitle">Get in Contact</h1>
-        {/* <p className = {`text ${colour ? "blackText" : "whiteText"}`}>hello</p>  */}
         <a className = "logoLinks" href="https://linkedin.ca/in/tristan-jin" target="_blank" rel="noopener noreferrer">
           <img className = {`contactLogo outerLeft ${colour ? "" : "invertColour"}`} src = {Linkedin} alt = "LinkedIn Logo"/>
         </a>

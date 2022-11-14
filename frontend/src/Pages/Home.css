@@ -218,7 +218,7 @@
   }
 
   .sectionTitle {
-    margin: 0%;
+    margin: 0px 0px 20px 0px;
     text-align: center;
     font-size: 3rem;
     color: #c891f1;
@@ -237,13 +237,6 @@
     .workText {
       font-size: 15px;
       font-family: 'mustica';
-    }
-
-    .part {
-      width: 100vw;
-      display: flex;
-      padding-left: 15%;
-      padding-right: 15%;
     }
 
     .rightWork {
@@ -281,13 +274,6 @@
     .workText {
       font-size: 23px;
       font-family: 'mustica';
-    }
-    
-    .part {
-      width: 100vw;
-      display: flex;
-      padding-left: 15%;
-      padding-right: 15%;
     }
 
     .rightWork {
@@ -445,12 +431,37 @@
     margin: 10px 0px 10px 10px;
   }
 
+  .clearPart {
+    width: 40vw;
+    display: flex;
+    height: 1px;
+    padding: 0px 15vw;
+    margin: 20px;
+    margin: 5vw 15vw 2vw 15vw;
+  }
+
+  .blackPart {
+    width: 40vw;
+    display: flex;
+    height: 1px;
+    background-color: black;
+    padding: 0px 15vw;
+    margin: 5vw 15vw 2vw 15vw;
+  }
+
   .qualcommLogo {
     height: auto;
     width: 18vw;
   }
 
-  .tauriaLogo {
+  .tauriaLogoDark {
     height: auto;
-    width: 7vw;
+    width: 18vw;
+    /* transition: 1000ms; */
+  }
+
+  .tauriaLogoWhite {
+    height: auto;
+    width: 18vw;
+    /* transition: 1000ms; */
   }
