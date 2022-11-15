@@ -11,9 +11,12 @@ import Github from '../Assets/Github.png'
 import Linkedin from '../Assets/LinkedIn.png'
 import Email from '../Assets/Email.png'
 // import Tauria from '../Assets/Tauria_Logo.png';
-import TauriaDark from '../Assets/Tauria_Logo_Dark.svg';
-import TauriaWhite from '../Assets/Tauria_Logo_White.svg';
+// import TauriaDark from '../Assets/Tauria_Logo_Dark.svg';
+// import TauriaWhite from '../Assets/Tauria_Logo_White.svg';
+import TauriaDark from '../Assets/Tauria_Logo_Dark.png';
+import TauriaWhite from '../Assets/Tauria_Logo_White.png';
 import Qualcomm from '../Assets/Qualcomm_Logo.svg';
+import { Link, animateScroll as scroll } from "react-scroll";
 
 function Home() {
   //if colour mode on, this is true. If black/white version, set this to false
@@ -21,51 +24,68 @@ function Home() {
   const [colour, setColour] = useState(true);
   const [sidebar, showSidebar] = useState(false);
 
+  const changeBackgroundHiddenColor = (newColor) => {
+    const elem = document.getElementById('rootBody');
+    console.log(elem);
+    // elem.style.background = `linear-gradient(${newColor} 0%, ${newColor} 50%, black 50%, black 100%)`; 
+    elem.style.backgroundColor = newColor;
+  }
+
   return (
     <>
       <div className={`Home ${colour ? "colourBackground fadeIn2" : "blackWhiteBackground fadeIn"}`} id = "Home">
-        <div className={`nav-icon ${colour ? "" : "invertColour"} ${sidebar ? "active" : ""}`} onClick={() => showSidebar(!sidebar)}>
+        <div className={`nav-icon ${colour ? "regularColour" : "invertColour"} ${sidebar ? "active" : ""}`} onClick={() => showSidebar(!sidebar)}>
             <div></div>
         </div>
         <div className = "intro">
           <div className = "introText">
-            <img className = {`boyImage ${colour ? "" : "invertColour"}`} src = {colour ? ManColour : ManBlackWhite} alt = ""/>
+            <img className = {`boyImage ${colour ? "regularColour" : "invertColour"}`} src = {colour ? ManColour : ManBlackWhite} alt = ""/>
             <h1 className = {`name ${colour ? "blackText" : "whiteText"}`}>Hi! I'm Tristan Jin</h1>
           </div>
           <div className = "contactMeIntro">
             <a className = "logoLinks" href="https://linkedin.ca/in/tristan-jin" target="_blank" rel="noopener noreferrer">
-              <img className = {`introLogo outerLeft ${colour ? "" : "invertColour"}`} src = {Linkedin} alt = "LinkedIn Logo"/>
+              <img className = {`introLogo outerLeft ${colour ? "regularColour" : "invertColour"}`} src = {Linkedin} alt = "LinkedIn Logo"/>
             </a>
             <a className = "logoLinks" href="https://github.com/tjin88/" target="_blank" rel="noopener noreferrer">
-              <img className = {`introLogo middle ${colour ? "" : "invertColour"}`} src = {Github} alt = "Github Logo"/>
+              <img className = {`introLogo middle ${colour ? "regularColour" : "invertColour"}`} src = {Github} alt = "Github Logo"/>
             </a>
             <a className = "logoLinks" href="mailto:tjin368@gmail.com" target="_blank" rel="noopener noreferrer">
-              <img className = {`introLogo middle ${colour ? "" : "invertColour"}`} src = {Email} alt = "Email Logo"/>
+              <img className = {`introLogo middle ${colour ? "regularColour" : "invertColour"}`} src = {Email} alt = "Email Logo"/>
             </a>
             <a className = "logoLinks" href="https://drive.google.com/file/d/1-6RqiUdoRNrCX9ZTSrHwicZ3mqupoOd-/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-              <img className = {`introLogo outerRight ${colour ? "" : "invertColour"}`} src = {Resume} alt = "Resume Logo"/>
+              <img className = {`introLogo outerRight ${colour ? "regularColour" : "invertColour"}`} src = {Resume} alt = "Resume Logo"/>
             </a>
           </div>
         </div>
       </div>
-      <img className = {`sunMoonHome ${colour ? "" : "invertColour"}`} src = {colour ? Moon : Sun} alt = "Moon" onClick={() => setColour(!colour)}/>
-        <div className={`${sidebar ? "sidebar active" : "sidebar"} ${colour ? "colourSidebar" : "blackWhiteSidebar"}`}>
-          {/* <div className={`nav-icon ${colour ? "" : "invertColour"} ${sidebar ? "active" : ""}`} onClick={() => showSidebar(!sidebar)}>
-              <div></div>
-          </div> */}
-          <ul className={`${sidebar ? "sidebarList active" : "sidebarList"}`}>
-            {SidebarData.map((item, index) => {
-              return (
-                <li key={index} className={`${item.className} ${colour ? "" : "invertColour"}`}>
-                  <a href={item.path} onClick={() => showSidebar(!sidebar)}>
-                    {/* ICON WOULD GO HERE */}
-                    <span>{item.title}</span>
-                  </a>
-                </li>
-              )
-            })}
-          </ul>
-        </div>
+      <img className = {`sunMoonHome ${colour ? "regularColour" : "invertColour"}`} src = {colour ? Moon : Sun} alt = "Moon" onClick={() => {setColour(!colour); changeBackgroundHiddenColor(colour ? "#2B2C2E" : "#FAF8EE")}}/>
+      <div className={`${sidebar ? "sidebar active" : "sidebar"} ${colour ? "colourSidebar" : "blackWhiteSidebar"}`}>
+        {/* <div className={`nav-icon ${colour ? "regularColour" : "invertColour"} ${sidebar ? "active" : ""}`} onClick={() => showSidebar(!sidebar)}>
+            <div></div>
+        </div> */}
+        <ul className={`${sidebar ? "sidebarList active" : "sidebarList"}`}>
+          {SidebarData.map((item, index) => {
+            return (
+              <li key={index} className={`${item.className} ${colour ? "regularColour" : "invertColour"}`}>
+                <Link 
+                  // activeClass="active" 
+                  to={item.path}
+                  smooth={true}
+                  duration={1500}
+                  offset={-50}
+                  onClick={() => showSidebar(!sidebar)}
+                > 
+                  <span>{item.title}</span>
+                </Link>
+                {/* <a href={item.path} onClick={() => showSidebar(!sidebar)}> */}
+                  {/* ICON WOULD GO HERE */} 
+                  {/* <span>{item.title}</span> */}
+                {/* </a> */}
+              </li>
+            )
+          })}
+        </ul>
+      </div>
 
       <div className = {`aboutMe ${colour ? "colourBackground fadeIn2" : "blackWhiteBackground fadeIn"} ${sidebar ? "active" : ""}`} id = "AboutMe">
         <h1 className = "sectionTitle">ABOUT ME</h1>
@@ -78,11 +98,11 @@ function Home() {
       <div className = {`workExperience ${colour ? "colourBackground fadeIn2" : "blackWhiteBackground fadeIn"} ${sidebar ? "active" : ""}`} id = "WorkExperience">
         <h1 className = "sectionTitle">Work Experience</h1>
         <p className={`workText leftWork ${colour ? "blackText" : "whiteText"}`}>Qualcomm - Machine Learning Team</p>
-        <img className = "qualcommLogo rightWork" src = {Qualcomm} alt = "Qualcomm logo"/>
+        <img className = "rightWork qualcommLogo" src = {Qualcomm} alt = "Qualcomm logo"/>
         {/* <p className="workText leftWork">Some explaination</p> */}
         <div className="blackPart"></div>
         <p className={`workText leftWork ${colour ? "blackText" : "whiteText"}`}>Tauria - Frontend Development Team</p>
-        <img className = {`${colour ? "tauriaLogoDark" : "tauriaLogoWhite"} rightWork`} src = {colour ? TauriaDark : TauriaWhite} alt = "Tauria logo"/>
+        <img className = {`rightWork ${colour ? "tauriaLogoDark" : "tauriaLogoWhite"}`} src = {colour ? TauriaDark : TauriaWhite} alt = "Tauria logo"/>
         {/* <p className="workText rightWork">Some explaination</p> */}
         <section className="clearPart"></section>
       </div>
@@ -96,16 +116,16 @@ function Home() {
       <div className = {`contact ${colour ? "colourBackground fadeIn2" : "blackWhiteBackground fadeIn"} ${sidebar ? "active" : ""}`} id = "Contact">
         <h1 className = "sectionTitle">Get in Contact</h1>
         <a className = "logoLinks" href="https://linkedin.ca/in/tristan-jin" target="_blank" rel="noopener noreferrer">
-          <img className = {`contactLogo outerLeft ${colour ? "" : "invertColour"}`} src = {Linkedin} alt = "LinkedIn Logo"/>
+          <img className = {`contactLogo outerLeft ${colour ? "regularColour" : "invertColour"}`} src = {Linkedin} alt = "LinkedIn Logo"/>
         </a>
         <a className = "logoLinks" href="https://github.com/tjin88/" target="_blank" rel="noopener noreferrer">
-          <img className = {`contactLogo middle ${colour ? "" : "invertColour"}`} src = {Github} alt = "Github Logo"/>
+          <img className = {`contactLogo middle ${colour ? "regularColour" : "invertColour"}`} src = {Github} alt = "Github Logo"/>
         </a>
         <a className = "logoLinks" href="mailto:tjin368@gmail.com" target="_blank" rel="noopener noreferrer">
-          <img className = {`contactLogo middle ${colour ? "" : "invertColour"}`} src = {Email} alt = "Email Logo"/>
+          <img className = {`contactLogo middle ${colour ? "regularColour" : "invertColour"}`} src = {Email} alt = "Email Logo"/>
         </a>
         <a className = "logoLinks" href="https://drive.google.com/file/d/1-6RqiUdoRNrCX9ZTSrHwicZ3mqupoOd-/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-          <img className = {`contactLogo outerRight ${colour ? "" : "invertColour"}`} src = {Resume} alt = "Resume Logo"/>
+          <img className = {`contactLogo outerRight ${colour ? "regularColour" : "invertColour"}`} src = {Resume} alt = "Resume Logo"/>
         </a>
       </div>
 

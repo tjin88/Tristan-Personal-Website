@@ -1,31 +1,31 @@
 export const SidebarData = [
     {
         title: "Home",
-        path: "#Home",
+        path: "Home",
         icon: "",
         className: "sidebarTitle"
     },
     {
         title: "About",
-        path: "#AboutMe",
+        path: "AboutMe",
         icon: "",
         className: "sidebarTitle"
     },
     {
         title: "Work Experience",
-        path: "#WorkExperience",
+        path: "WorkExperience",
         icon: "",
         className: "sidebarTitle"
     },
     {
         title: "Interests",
-        path: "#Interests",
+        path: "Interests",
         icon: "",
         className: "sidebarTitle"
     },
     {
         title: "Contact",
-        path: "#Contact",
+        path: "Contact",
         icon: "",
         className: "sidebarTitle"
     },
