@@ -173,7 +173,7 @@
 
   .sidebarTitle a {
     text-decoration: none;
-    color: black;
+    /* color: black; */
     font-size: 1.5vw;
   }
 
@@ -320,7 +320,7 @@
   } */
   a:hover {
     /* color: #966Fd6; */
-    color: #9300ff;
+    /* color: #9300ff; */
     font-weight: bold;
   }
 
@@ -330,6 +330,7 @@
 
   .purpleLinks:hover {
     color: #9300ff;
+    font-weight: bold;
   }
 
   /* .purpleLinks:after {

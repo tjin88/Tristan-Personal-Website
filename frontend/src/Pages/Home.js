@@ -66,7 +66,7 @@ function Home() {
         <ul className={`${sidebar ? "sidebarList active" : "sidebarList"}`}>
           {SidebarData.map((item, index) => {
             return (
-              <li key={index} className={`${item.className} ${colour ? "regularColour" : "invertColour"}`}>
+              <li key={index} className={`${item.className} ${colour ? "blackText" : "whiteText"}`}>
                 <Link 
                   // activeClass="active" 
                   to={item.path}
@@ -109,8 +109,9 @@ function Home() {
 
       <div className = {`interests ${colour ? "colourBackground fadeIn2" : "blackWhiteBackground fadeIn"} ${sidebar ? "active" : ""}`} id = "Interests">
         <h1 className = "sectionTitle">Interests</h1>
-        <p className = {`text ${colour ? "blackText" : "whiteText"}`}>Running</p> 
-        <p className = {`text ${colour ? "blackText" : "whiteText"}`}>Baking Cupcakes</p> 
+        <p className = {`text ${colour ? "blackText" : "whiteText"}`}>Running (LA Marathon 2019, Chicago Marathon 2022)</p> 
+        <p className = {`text ${colour ? "blackText" : "whiteText"}`}>Baking Cupcakes (Betty Crocker is under-rated)</p> 
+        <p className = {`text ${colour ? "blackText" : "whiteText"}`}>Tennis Coaching (since 2017)</p> 
       </div>
 
       <div className = {`contact ${colour ? "colourBackground fadeIn2" : "blackWhiteBackground fadeIn"} ${sidebar ? "active" : ""}`} id = "Contact">
