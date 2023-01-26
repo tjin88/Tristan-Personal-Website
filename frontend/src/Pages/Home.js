@@ -64,6 +64,7 @@ function Home() {
             <div></div>
         </div> */}
         <ul className={`${sidebar ? "sidebarList active" : "sidebarList"}`}>
+          {/* Test if github will accept this commit */}
           {SidebarData.map((item, index) => {
             return (
               <li key={index} className={`${item.className} ${colour ? "blackText" : "whiteText"}`}>
