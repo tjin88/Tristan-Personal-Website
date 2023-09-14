@@ -1,28 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './App';
+import App from './App';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from './Pages/Home';
-import About from './Pages/About';
-import Projects from './Pages/Projects';
-import WorkExperience from './Pages/WorkExperience';
-import Extracurriculars from './Pages/Extracurriculars';
+// import Home from './Pages/Home';
+import Manga from './Pages/Manga';
+import LightNovels from './Pages/LightNovels';
+import Footer from './Components/Footer';
 
 
 ReactDOM.render(
-  // <React.StrictMode>
-  //   <Home />
-  // </React.StrictMode>,
   <Router>
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/About" element={<About />} />
-      <Route path="/Projects" element={<Projects />} />
-      <Route path="/WorkExperience" element={<WorkExperience />} />
-      <Route path="/Extracurriculars" element={<Extracurriculars />} />
+      <Route path="/" element={<App />} />
+      <Route path="/Manga" element={<Manga />} />
+      <Route path="/LightNovels" element={<LightNovels />} />
     </Routes>
-    {/* <Footer /> */}
+    <Footer />
   </Router>,
   document.getElementById('root')
 );

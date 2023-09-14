@@ -1,0 +1,30 @@
+.nav-icon {
+    position: fixed;
+    margin: 2em;
+    width: 40px;
+    z-index: 1000;
+  }
+
+  .nav-icon.active:before {
+    transform: translateY(12px) rotate(135deg);
+  }
+  
+  .nav-icon.active:after {
+    transform: translateY(-12px) rotate(-135deg);
+  }
+
+  .nav-icon.active div {
+    transform: scale(0);
+  } 
+  
+  .nav-icon:after, 
+  .nav-icon:before, 
+  .nav-icon div {
+    background-color: black;
+    border-radius: 3px;
+    content: '';
+    display: block;
+    height: 5px;
+    margin: 7px 0;
+    transition: all .5s ease-in-out;
+  }

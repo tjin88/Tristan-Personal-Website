@@ -1,0 +1,14 @@
+.interests {
+    /* height: 100vh; */
+    width: 100%;
+    padding-bottom: 100px;
+    transition: 850ms;
+    text-align: center;
+  }
+  
+  .interests.active {
+    /* right: 0%; */
+    width: 80vw;
+    padding-left: 20vw;
+    transition: 850ms;
+  }

@@ -18,8 +18,14 @@ export const SidebarData = [
         className: "sidebarTitle"
     },
     {
-        title: "Interests",
-        path: "Interests",
+        title: "Education",
+        path: "Education",
+        icon: "",
+        className: "sidebarTitle"
+    },
+    {
+        title: "Projects",
+        path: "Projects",
         icon: "",
         className: "sidebarTitle"
     },

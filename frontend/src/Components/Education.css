@@ -1,0 +1,135 @@
+   #education {
+    /* padding: 40px 0; */
+    /* padding: 10px 50px; */
+    padding: 10px 50px 30px;
+    /* background-color: #f4f4f4; */
+  }
+
+  .eduction {
+    width: 100%;
+    padding-bottom: 30px;
+    transition: 850ms;
+  }
+
+  .eduction.active {
+    /* right: 0%; */
+    width: 80vw;
+    padding-left: 20vw;
+    transition: 850ms;
+  }
+
+  .colourBackground {
+    /* background: linear-gradient(180deg, #E9A9E7 29.92%, #FBC8D4 68.05%, #F7E8D2 100%); */
+    background-color: #FAF8EE;
+    animation: fadeColourBackground 1s;
+    animation-fill-mode: forwards;
+  }
+
+  .blackWhiteBackground {
+    /* background: linear-gradient(180deg, #878787 1.07%, #B8B8B8 21.16%, #D4D4D4 44.87%, #DDDDDD 58.78%, #FFFFFF 100%); */
+    background-color: #2B2C2E;
+    animation: fadeBlackWhiteBackground 1s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes fadeBlackWhiteBackground {
+    from { background-color: #FAF8EE; }
+    to { background-color: #2B2C2E; }
+  }
+
+  @keyframes fadeColourBackground{
+    from { background-color: #2B2C2E; }
+    to { background-color: #FAF8EE; }
+  }
+
+  .education-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 8%;
+  }
+
+  .education-item {
+    /* background-color: white; */
+    /* background-color: #32312f; */
+    /* background-color: #236e96; */
+    background-color: #8077cc;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    border: 1px solid #eee;
+  }
+  
+  .education-item:hover {
+    box-shadow: 0 0 20px #999;
+  }
+  
+  /* .education-item {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+   */
+  .education-item h3 {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .education-item p {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .education-item ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .education-item ul li {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .education-item ul li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .education-item .school-logo {
+    width: 100px;
+    height: auto;
+    float: left;
+    margin-right: 30px;
+  }
+
+  .education-logo img {
+    height: 60px;
+    width: 60px;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .education-item .school-logo {
+      float: none;
+      margin-right: 0;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .education-item {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  

@@ -1,29 +1,42 @@
+import React, { useState } from 'react';
 import './App.css';
 import Moon from './Assets/Moon.png';
-import ManColour from './Assets/ManColour.png';
+import Sun from './Assets/Sun.png';
+import Home from './Components/Home';
+import About from './Components/About';
+import WorkExperience from './Components/WorkExperience';
+import Education from './Components/Education';
+import Projects from './Components/Projects';
+import Contact from './Components/Contact';
+import Sidebar from './Components/Sidebar';
 
 function App() {
+  //if colour mode on, this is true. If black/white version, set this to false
+  const [colour, setColour] = useState(true);
+  const [sidebar, showSidebar] = useState(false);
+
+  const changeBackgroundHiddenColor = (newColor) => {
+    const elem = document.getElementById('rootBody');
+    console.log(elem);
+    // elem.style.background = `linear-gradient(${newColor} 0%, ${newColor} 50%, black 50%, black 100%)`; 
+    elem.style.backgroundColor = newColor;
+  }
+
   return (
-    <div className="App">
-      <div className = "background">
-        {/* <p>EMPTY</p> */}
-        <div className = "pictureContainer">
-          <img className = "moon" src = {Moon} alt = "Moon"/>
-        </div>
-
-        <button className="menu" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu">
-          <svg width="100" height="100" viewBox="0 0 100 100">
-            <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
-            <path class="line line2" d="M 20,50 H 80" />
-            <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
-          </svg>
-        </button>
-
-        <div className = "intro">
-          <img className = "boyImage" src = {ManColour} alt = ""/>
-          <h1 className = "name">Hi! I'm Tristan Jin</h1>
-        </div>
-      </div>
+    <div className="tristanWebsite">
+      <Home colour={colour} sidebar={sidebar} showSidebar={showSidebar}/>
+      <img 
+        className = {`sunMoonHome ${colour ? "regularColour" : "invertColour"}`} 
+        src = {colour ? Moon : Sun} 
+        alt = "Sun/Moon icon" 
+        onClick={() => {setColour(!colour); changeBackgroundHiddenColor(colour ? "#2B2C2E" : "#FAF8EE")}}
+      />
+      <Sidebar colour={colour} sidebar={sidebar} showSidebar={showSidebar}/>
+      <About colour={colour} sidebar={sidebar}/>
+      <WorkExperience colour={colour} sidebar={sidebar}/>
+      <Education colour={colour} sidebar={sidebar}/>
+      <Projects colour={colour} sidebar={sidebar}/>
+      <Contact colour={colour} sidebar={sidebar}/>
     </div>
   );
 }
